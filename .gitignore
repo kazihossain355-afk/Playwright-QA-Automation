@@ -1,0 +1,15 @@
+# Environment variables and secrets
+.env
+
+# Playwright authentication state
+login.json
+
+# Dependencies
+node_modules/
+
+# Playwright generated reports/results
+playwright-report/
+test-results/
+
+# macOS
+.DS_Store
