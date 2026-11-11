@@ -1,4 +1,4 @@
-name: Playwright Tests
+name: Playwright UI Tests
 
 on:
   push:
@@ -8,8 +8,8 @@ on:
 
 jobs:
   test:
-    # Run the same tests on three operating systems
     strategy:
+      fail-fast: false
       matrix:
         os: [ubuntu-latest, windows-latest, macos-latest]
 
@@ -30,10 +30,9 @@ jobs:
       - name: Install Playwright browsers
         run: npx playwright install --with-deps
 
-      - name: Run Playwright tests
-        run: npx playwright test
+      - name: Run UI tests
+        run: npx playwright test "tests/ui auto"
 
-      # Keep reports/evidence even when tests fail
       - name: Upload Playwright report
         if: always()
         uses: actions/upload-artifact@v4
