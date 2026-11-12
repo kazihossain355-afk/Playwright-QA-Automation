@@ -64,6 +64,19 @@ Example:
 6. Verify the updated information in the UI
 7. Clean up test data
 
+## CI/CD
+
+This project uses GitHub Actions to execute Playwright UI automation on Windows and macOS.
+
+The CI workflow:
+- Installs Node.js and project dependencies
+- Installs Playwright browsers
+- Runs the UI automation suite
+- Uploads Playwright reports
+- Uploads test execution results and evidence
+
+The workflow runs on pushes to `main` and on pull requests targeting `main`.
+
 ## Project Structure
 
 ```text
